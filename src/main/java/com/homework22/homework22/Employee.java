@@ -7,6 +7,8 @@ public class Employee {
     private String lastName;
     private int department;
     private double salary;
+    private static int nextId = 0;
+    private int id;
 
     public int getDepartment() {
         return department;
@@ -21,6 +23,12 @@ public class Employee {
         this.lastName = lastName;
         this.department = department;
         this.salary = salary;
+        nextId++;
+        this.id = nextId;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getFirstName() {
@@ -46,6 +54,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Имя: " + firstName + " Фамилия: " + lastName + " Отдел: " + department + " Зарплата: " + salary;
+        return "Имя: " + firstName + " Фамилия: " + lastName +  "Id: " + id +
+                " Отдел: " + department + " Зарплата: " + salary;
     }
 }
